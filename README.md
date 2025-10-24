@@ -67,8 +67,7 @@
 |-------|-------------|--------|
 | **Object Detection** | Detect and classify objects (staples, labels, etc.) | ✅ Active |
 | **Sheet Segmentation** | Segment and extract sheet boundaries | ✅ Active |
-| **Document Classification** | *Coming Soon* | 🔜 Planned |
-| **QR Code Detection** | *Coming Soon* | 🔜 Planned |
+| **Blank Page Classification** | *Coming Soon* | 🔜 Planned |
 
 ---
 
@@ -137,7 +136,7 @@
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-org/areascan-profiler-ui.git
+git clone https://github.com/fujifilm-ripcord/areascan-profiler-ui.git
 cd areascan-profiler-ui
 ```
 
@@ -645,9 +644,6 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 - **[rip-workcell](https://github.com/MoffettData/rip-workcell)** - Main workcell application
 - **[ops-counter](https://github.com/fujifilm-ripcord/ops-counter)** - Operator counting tool (similar architecture)
-- **[mate-frontend](https://github.com/fujifilm-ripcord/mate-frontend)** - MATE frontend application
-- **[mate-backend](https://github.com/fujifilm-ripcord/mate-backend)** - MATE backend services
-
 ---
 
 ## 📄 License
