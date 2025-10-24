@@ -1,0 +1,14 @@
+# UI Framework
+PyQt6==6.7.0
+
+# gRPC - Updated to resolve dependency conflicts
+grpcio==1.63.0
+grpcio-tools==1.63.0
+protobuf>=5.26.1,<6.0
+
+# CLI
+click==8.1.7
+
+# Image Processing
+pillow==10.3.0
+numpy==1.26.4

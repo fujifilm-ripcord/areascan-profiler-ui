@@ -1,0 +1,141 @@
+syntax = "proto3";
+
+package area_scan_inference;
+option csharp_namespace = "Workcell.Contracts.Generated.AreaScanInference";
+
+import "ripcord_grpc.proto";
+
+service AreaScanInference {
+    // Health check endpoint
+    rpc Check(ripcord_grpc.HealthCheckRequest) returns (ripcord_grpc.HealthCheckResponse);
+
+    // Detect objects using ML inference
+    rpc DetectObjects(DetectObjectsRequest) returns (DetectObjectsResponse);
+
+    // Segment sheets using ML inference
+    rpc SegmentSheets(SegmentSheetsRequest) returns (SegmentSheetsResponse);
+
+    // Classify objects using ML inference
+    rpc ValidateObjects(ValidateObjectsRequest) returns (ValidateObjectsResponse);
+
+    // Execute an inference workflow defined in Roboflow.
+    rpc ExecuteInferenceWorkflow(ExecuteInferenceWorkflowRequest) returns (ExecuteInferenceWorkflowResponse);
+}
+
+message ExecuteInferenceWorkflowRequest{
+    DetectObjectsRequest detect_objects_request = 1;
+    SegmentSheetsRequest segment_sheets_request = 2;
+}
+
+message ExecuteInferenceWorkflowResponse{
+    DetectObjectsResponse detect_objects_response = 1;
+    SegmentSheetsResponse segment_sheets_response = 2;
+}
+
+message ValidateObjectsRequest{
+    string id = 1;
+    bytes image_bytes = 2;
+}
+
+message ValidateObjectsResponse{
+    repeated ValidatedObject validated_objects = 1;
+}
+
+message ValidatedObject{
+    string object_class = 1;
+    float confidence = 2;
+}
+
+message DetectObjectsRequest{
+    // The unique ID for this request
+    string id = 1;
+
+    // The image to be processed as a flattened tensor
+    bytes image_bytes = 2;
+
+    // The number of channels the image has
+    int32 channels = 3;
+
+    // The height of the image
+    int32 image_height = 4;
+
+    // The width of the image
+    int32 image_width = 5;
+}
+
+message DetectObjectsResponse{
+    repeated ObjectDetectionPrediction predictions = 1;
+}
+
+message ObjectDetectionPrediction{
+    //Center X
+    float center_x = 1;
+
+    //Center Y
+    float center_y = 2;
+
+    //Width
+    float width = 3;
+
+    //Height
+    float height = 4;
+
+    // The class of the prediction
+    string prediction_class = 5;
+
+    // The confidence of the prediction
+    float confidence = 6;
+
+}
+
+message SegmentSheetsRequest{
+    // The unique ID for this request
+    string id = 1;
+
+    // The image to be processed as a flattened tensor
+    bytes image_bytes = 2;
+
+    // The number of channels the image has
+    int32 channels = 3;
+
+    // The height of the image
+    int32 image_height = 4;
+
+    // The width of the image
+    int32 image_width = 5;
+}
+
+message SegmentSheetsResponse{
+    repeated InstanceSegmentationPrediction predictions = 1;
+}
+
+message InstanceSegmentationPrediction{
+    //Center X
+    float center_x = 1;
+
+    //Center Y
+    float center_y = 2;
+
+    //Width
+    float width = 3;
+
+    //Height
+    float height = 4;
+
+    // The class of the prediction
+    string prediction_class = 5;
+
+    // The confidence of the prediction
+    float confidence = 6;
+
+    // The polygon points of the segmentation mask
+    repeated PolyPoint polygon_points = 7;
+}
+
+message PolyPoint{
+    //X coordinate
+    float x = 1;
+    
+    //Y coordinate
+    float y = 2;
+}

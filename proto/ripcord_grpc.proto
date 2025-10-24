@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package ripcord_grpc;
+option csharp_namespace = "Ripcord.Digitization.Grpc.Generated";
+
+message HealthCheckRequest {
+    string service_name = 1;
+}
+
+message HealthCheckResponse {
+    enum ServingStatus {
+        UNKNOWN = 0;
+        SERVING = 1;
+        NOT_SERVING = 2;
+    }
+    ServingStatus status = 1;
+}
+
+enum ServiceType{
+
+    // Unknown
+    UNKNOWN = 0;
+
+    // Area Scan Buffer
+    AREA_SCAN_BUFFER = 1;
+
+    // Area Scan Collector
+    AREA_SCAN_COLLECTOR = 2;
+
+    // Area Scan Interpretator
+    AREA_SCAN_INTERPRETATOR = 3;
+
+    // Area Scan Processor
+    AREA_SCAN_PROCESSOR = 4;
+
+    // IO Block
+    IO = 5;
+
+    // Metrics Publisher
+    METRICS_PUBLISHER = 6;
+
+    // Mr. Roboto
+    MR_ROBOTO = 7;
+
+    // Notifications
+    NOTIFICATIONS = 8;
+
+    // Overhead Camera
+    OVERHEAD_CAMERA = 9;
+
+    // Prep
+    PREP = 10;
+
+    // PLC Messaging
+    PLC_MESSAGING = 11;
+
+    // Scan Context
+    SCAN_CONTEXT = 12;
+
+    // Scan Recorder
+    SCAN_RECORDER = 13;
+
+    // Workcell Health
+    WORKCELL_HEALTH = 14;
+
+    // ADT Image Processing
+    ADT_IMAGE_PROCESSING = 15;
+
+    // ADT Messaging
+    ADT_MESSAGING = 16;
+
+    // Crop and straighten service
+    CROP_AND_STRAIGHTEN = 17;
+
+    // Area Scan Inference Service
+    AREA_SCAN_INFERENCE = 18;
+
+    // Robot Log Service
+    ROBOT_LOG = 19;
+}

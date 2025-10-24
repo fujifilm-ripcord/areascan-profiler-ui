@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# Generated gRPC files (regenerate with generate_grpc.py)
+generated/*_pb2.py
+generated/*_pb2_grpc.py
+generated/*_grpc.py
+
+# Keep the __init__.py in generated
+!generated/__init__.py
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# PyQt
+*.ui.py
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local config overrides
+local_settings.py
