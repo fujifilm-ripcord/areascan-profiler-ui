@@ -36,7 +36,7 @@
 
 ## 🎯 Overview
 
-**AreaScan Profiler** is a standalone Python application designed for testing and profiling machine learning inference models used in the Ripcord digitization pipeline. Similar to the [ops-counter](https://github.com/fujifilm-ripcord/ops-counter) tool, it operates independently of the main `rip-workcell` application while communicating with the AreaScanInference service via gRPC.
+**AreaScan Profiler** is a standalone Python application designed for testing and profiling machine learning inference models used in the FBRC pipeline. Similar to the [ops-counter](https://github.com/fujifilm-ripcord/ops-counter) tool, it operates independently of the main `rip-workcell` application while communicating with the AreaScanInference service via gRPC.
 
 ### Why AreaScan Profiler?
 
@@ -648,20 +648,14 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ## 📄 License
 
-Internal Fujifilm/Ripcord tool - Not for external distribution
-
----
-
-## 👥 Authors
-
-- **Chethan** - [@chethan-fujifilm](https://github.com/chethan-fujifilm)
+Internal FBRC tool - Not for external distribution
 
 ---
 
 ## 🙏 Acknowledgments
 
 - Inspired by [ops-counter](https://github.com/fujifilm-ripcord/ops-counter) architecture
-- Built for the Ripcord digitization team
+- Built for the  Dev  team
 - Thanks to the rip-workcell team for the gRPC infrastructure
 
 ---
@@ -672,13 +666,13 @@ For issues, questions, or contributions:
 
 - **Issues**: [GitHub Issues](https://github.com/your-org/areascan-profiler-ui/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/your-org/areascan-profiler-ui/discussions)
-- **Slack**: #digitization-team (Internal)
+- **Slack**: #FBRC (Internal)
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by the Ripcord Digitization Team**
+**Made with ❤️ by the FBRC Dev Team**
 
 [⬆ Back to Top](#areascan-profiler)
 
